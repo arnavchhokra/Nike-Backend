@@ -18,6 +18,7 @@ from django.urls import path,include
 from rest_framework import routers                 
 from Products import views 
 from django.views.generic import TemplateView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 #router = routers.DefaultRouter()                   
@@ -29,5 +30,6 @@ urlpatterns = [
     path('Products/', include('Products.urls')),
     path('User/', include('user.urls')),
     path('', TemplateView.as_view(template_name='index.html')),
-
 ]
+
+urlpatterns += staticfiles_urlpatterns()
